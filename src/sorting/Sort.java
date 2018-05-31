@@ -1,5 +1,11 @@
 package sorting;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
+
 public class Sort {
 	
 	public void print(int[] array) {
@@ -67,27 +73,71 @@ public class Sort {
 		}
 		return unsortedArray;
 	}
+	//TODO
+			//save 3 examples of merge sorting. write it out 10 times. since i can't figure it out.
+			//remove gitingore.txt from repository
+			//finish mergesort.
+			//use an int list
+	public void mergeSort() {
+		List<Integer> unsorted = Arrays.asList(5,8,4,9,2,13,20,66,754,32,1,5,-3,24);
+		split(unsorted);
 
-	public void mergeSort(int[] unsortedArray){
-		//second array to hold arrays = unsorted length
-		//break down int array into single elements
-			//second array of arrays = each element
-		// 12  34
-		//  1234
-		//
-		//loop through array of arrays and compare elements. 
-		//
-		
-		
-		int[][] arrays = new int[unsortedArray.length][];
-		
-		for (int i = 0; i < unsortedArray.length; i++) {
-			arrays[i][0] = unsortedArray[i];
-		}
-		System.out.println("hi");
 	}
-	
-	
+	public static List<Integer> split(List<Integer> unsorted) {
+		int middle = unsorted.size() / 2;
+		List<Integer> left = new ArrayList<Integer>();
+		List<Integer> right = new ArrayList<Integer>();
+		List<Integer> sortedList = new ArrayList<Integer>();
+
+		for (int i = 0; i < middle; i++) {
+			left.add(unsorted.get(i));
+		}
+		if (left.size() > 1) {
+			split(left);
+		}else {
+			System.out.println(left.size() + " " + left.get(0));
+		}
+		for (int i = middle; i < unsorted.size(); i++) {
+			right.add(unsorted.get(i));
+		}
+		if (right.size() > 1) {
+			split(right);
+		}else {
+			System.out.println(right.size() + " " + right.get(0));
+		}
+		//same size list ,,,, 1 and 1
+		
+		//lobsidded 2 and 1 ....  1 and 2
+		int rightIndex = 0;
+		int leftIndex = 0;
+		for (int i = 0; i < left.size(); i++) {
+			if (rightIndex == right.size() && leftIndex == left.size()) {
+				break;
+			}
+			else if (rightIndex == right.size()) {
+				//add all of left to array
+				for (int ii = leftIndex; leftIndex != left.size(); ii++) {
+					sortedList.add(left.get(i));
+					leftIndex++;
+				}
+			}else if (leftIndex == right.size()) {
+				//add all of right to array
+				for (int iii = rightIndex; rightIndex != right.size(); iii++) {
+					sortedList.add(right.get(i));
+					rightIndex++;
+				}
+			}
+
+			if (left.get(i) >= right.get(i)) {
+				sortedList.add(right.get(i));
+				rightIndex++;
+			}else {
+				sortedList.add(left.get(i));
+				leftIndex++;
+			}
+		}
+		return sortedList;
+	}
 	
 	
 }
