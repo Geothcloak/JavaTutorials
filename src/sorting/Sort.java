@@ -73,11 +73,6 @@ public class Sort {
 		}
 		return unsortedArray;
 	}
-	//TODO
-			//save 3 examples of merge sorting. write it out 10 times. since i can't figure it out.
-			//remove gitingore.txt from repository
-			//finish mergesort.
-			//use an int list
 	public void mergeSort() {
 		List<Integer> unsorted = Arrays.asList(5,8,4,9,2,13,20,66,754,32,1,5,-3,24);
 		split(unsorted);
@@ -105,9 +100,7 @@ public class Sort {
 		}else {
 			System.out.println(right.size() + " " + right.get(0));
 		}
-		//same size list ,,,, 1 and 1
-		
-		//lobsidded 2 and 1 ....  1 and 2
+
 		int rightIndex = 0;
 		int leftIndex = 0;
 		for (int i = 0; i < left.size(); i++) {
@@ -142,6 +135,10 @@ public class Sort {
 	
 }
 
+//TODO
+//make sorting part another method and call it. 
+//remove gitingore.txt from repository
+//finish mergesort.
 
 
 
