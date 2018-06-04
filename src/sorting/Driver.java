@@ -1,5 +1,6 @@
 package sorting;
 
+
 public class Driver {
 	public static void main(String[] args) {
 		//int[] unsortedArray = {5,8,4,9,2,13,20,66,754,32,1,5,-3,24};
@@ -15,7 +16,6 @@ public class Driver {
 		//print bubbleSort
 		//sort.print(sort.bubbleSort(unsortedArray));
 		
-		//
-		sort.mergeSort();
+		sort.mergeSort();	
 	}
 }
