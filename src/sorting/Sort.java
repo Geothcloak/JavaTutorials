@@ -50,16 +50,6 @@ public class Sort {
 		return sortedArray;
 	}
 	public int[] bubbleSort(int[] unsortedArray) {
-
-
-		//bool flipped
-		//while true
-			//for each element -1
-			//check side by side
-				//flip if right is smaller
-				//bool flipped = true
-			//if bool flipped = false break
-		
 		boolean flipped = false;
 		int temp = 0;
 		while (true) {
@@ -79,9 +69,8 @@ public class Sort {
 		}
 		return unsortedArray;
 	}
-	
 	public void mergeSort() {
-		List<Integer> unsorted = Arrays.asList(5,8,4,9,2,13,20,66,754,32,1,5,-3,24);
+		List<Integer> unsorted = Arrays.asList(5,8,4,9,2,13,20,66,754,32,1,5,-3,24,99,2,3,5,6,7,84,4,46,34,23);
 		List<Integer> sortedList = new ArrayList<Integer>();
 		sortedList = split(unsorted);
 		printList(sortedList);
@@ -92,25 +81,21 @@ public class Sort {
 		List<Integer> left = new ArrayList<Integer>();
 		List<Integer> right = new ArrayList<Integer>();
 		List<Integer> sortedList = new ArrayList<Integer>();
+		
 
 		for (int i = 0; i < middle; i++) {
 			left.add(unsorted.get(i));
 		}
 		if (left.size() > 1) {
 			left = split(left);
-		}else {
-			//System.out.println(left.size() + " " + left.get(0));
 		}
 		for (int i = middle; i < unsorted.size(); i++) {
 			right.add(unsorted.get(i));
 		}
 		if (right.size() > 1) {
 			right = split(right);
-		}else {
-			//System.out.println(right.size() + " " + right.get(0));
 		}
-		//5 8         - 9     -3
-		int rightIndex = 0; //1
+		int rightIndex = 0; 
 		int leftIndex = 0; 
 
 		while (rightIndex != right.size() || leftIndex != left.size()) {
@@ -146,9 +131,3 @@ public class Sort {
 		return sortedList;
 	}
 }
-
-//TODO
-//make sorting part another method and call it. 
-//finish mergesort.
-//redo selection sort
-//do merge sort without recursion for better understanding.

@@ -16,6 +16,6 @@ public class Driver {
 		//print bubbleSort
 		//sort.print(sort.bubbleSort(unsortedArray));
 		
-		sort.mergeSort();	
+		//sort.mergeSort();	
 	}
 }
