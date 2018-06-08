@@ -5,6 +5,9 @@ public class Driver {
 		BinarySearchTree tree = new BinarySearchTree(5);
 		tree.add(1);
 		tree.add(6);
+		tree.add(7);
+		tree.add(8);
+		tree.contains(8);
 	}
 }
 

@@ -17,7 +17,6 @@ public class BinarySearchTree {
 				if (currentLeaf.getLeft() == null) {
 					Leaf newLeaf = new Leaf(value);
 					currentLeaf.setLeft(newLeaf);
-					System.out.println("interations = " + interations);
 					break;
 				}
 				else {
@@ -29,7 +28,6 @@ public class BinarySearchTree {
 				if (currentLeaf.getRight() == null) {
 					Leaf newLeaf = new Leaf(value);
 					currentLeaf.setRight(newLeaf);
-					System.out.println("interations = " + interations);
 					break;
 				}
 				else {
@@ -37,6 +35,7 @@ public class BinarySearchTree {
 				}
 			}
 		}
+		System.out.println("interations = " + interations);
 	}
 	
 	public boolean contains(int value) {
@@ -45,15 +44,15 @@ public class BinarySearchTree {
 		while (true) {
 			interations++;
 			if (value == currentLeaf.getValue()) {
-				System.out.println("interations = " + interations);
 				System.out.println("yes contains " + value);
+				System.out.println("interations = " + interations);
 				return true;
 			}
 
 			if (value < currentLeaf.getValue()) {
 				if (currentLeaf.getLeft() == null) {
-					System.out.println("interations = " + interations);
 					System.out.println("no does not contain " + value);
+					System.out.println("interations = " + interations);
 					return false;
 				}
 				else {
@@ -63,8 +62,8 @@ public class BinarySearchTree {
 			
 			if (value > currentLeaf.getValue()) {
 				if (currentLeaf.getRight() == null) {
-					System.out.println("interations = " + interations);
 					System.out.println("no does not contain " + value);
+					System.out.println("interations = " + interations);
 					return false;
 				}
 				else {
